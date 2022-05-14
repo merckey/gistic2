@@ -341,6 +341,8 @@ function [D,regs,params] = run_focal_gistic(base_dir,D,refgene,params)
   % generate the plots
   %! TODO!!! need to ensure no real dependency on confidence-sensitive fields of cur_regs)
   all_lesions_file = [base_dir 'all_lesions_file' cext '.txt'];
+  verbose('Writing D.dat',30);
+  ddata = writematrix(M,[pathbase 'd_dat' ext '.txt'])
   gistic_plots(base_dir,ext,D,q,ads,cur_regs,cyto,all_lesions_file,[],[],[],[],[],params.qv_thresh,...
                           [],[],[],0,params.genepattern,1,1,[],[],params.fname);
 
